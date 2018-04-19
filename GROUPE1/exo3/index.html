@@ -4,9 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
         <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
-
         <title>Connexion livre blanc</title>
     </head>
     <body>
@@ -64,7 +62,10 @@
 
                 // Validation finale du formulaire
                 if( formError === 0 ){
-                    alert('succes!');
+                    // Stocker en localStorage l'email de l'utilisateur
+                    localStorage.setItem( 'userEmail', userEmail.val() );
+                    
+                    window.location.assign('protected.html');
                 };
 
             });

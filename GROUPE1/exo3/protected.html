@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+        <title>Télécharger le livre blanc</title>
+    </head>
+    <body>
+        <h1>Vous pouvez télécharger notre livre blanc</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta sapiente iure eaque iste ratione asperiores fuga labore consectetur laborum voluptas nobis et, qui ex aliquid distinctio natus? Alias, expedita consectetur.</p>
+        <button>Télécharger</button>
+
+        <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+        <script>
+        
+            // Vérifier la présence d'une variable en localStorage
+            var storedData = localStorage.getItem('userEmail');
+
+            if( storedData === null ){
+                // Rediriger l'utilisateur vers la page index
+                window.location.assign('index.html');
+            
+            } else { localStorage.removeItem('userEmail') }
+
+            
+        
+        </script>
+    </body>
+</html>
