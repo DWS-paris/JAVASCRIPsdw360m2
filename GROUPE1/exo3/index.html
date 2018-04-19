@@ -32,6 +32,42 @@
             var userName = $('[name="user_name"]');
             var userEmail = $('[name="user_email"]');
             var userAge = $('[name="userAge"]');
+
+            // Capter la soumission du formulaire
+            myForm.submit( function(event) {
+                // Bloquer le comportement du formulaire
+                event.preventDefault();
+
+                // Définir une variable pour les erreurs
+                var formError = 3;
+                
+                // Vérifier le nom
+                if( userName.val().length >= 2 ){
+                    // Success
+                    formError = formError - 1;
+
+                } else { alert('Nom obligatoire') };
+
+                // Vérifier l'email
+                if( userEmail.val().length >= 5 ){
+                    // Success
+                    formError = formError - 1;
+
+                } else { alert('Email obligatoire') };
+
+                // Vérifier l'age
+                if( userAge.val() > 0 ){
+                    // Success
+                    formError = formError - 1;
+
+                } else { alert('Age obligatoire') };
+
+                // Validation finale du formulaire
+                if( formError === 0 ){
+                    alert('succes!');
+                };
+
+            });
         
         </script>
 
