@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>EXO2 : les objets Javascript</title>
+    </head>
+    <body>
+        <h1 id="myTitle">Try to see me</h1>
+        
+        <!-- Intérger jQuery AVANT le script de la page -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <script>        
+        // Création d'un objet
+        var user = {
+            // Propriétés
+            first_name: 'Julien',
+            last_name: 'Noyer',
+            age: 38,
+
+            // Méthodes
+            isMajor: function(){
+                // Vérifier la valeur de la propriété age
+                if( this.age >= 18 ){
+                    console.log('User is major');
+
+                } else { console.log('User is not major'); }
+            },
+
+            sayHello: function(){
+                // Afficher un message de bienvenue
+                document.getElementById('myTitle');
+
+                $('#myTitle').text( 'Hello ' + this.first_name );
+            }
+        };
+
+        // Exécuter les méthodes de l'objet
+        user.isMajor();
+        user.sayHello();
+
+        </script>
+    </body>
+</html>

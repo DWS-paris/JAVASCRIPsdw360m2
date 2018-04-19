@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>EXO1 : Révision Javascript</title>
+    </head>
+    <body>
+        <h1 id="myTitle">Try to see me</h1>
+
+        <script>
+        
+            // Déclarer des variables
+            var first_name = 'Julien'; //=> type String
+            var age = 38; //=> type Number
+            var isMajor = true; //=> type Boolean
+
+            // Tester son code dans la console
+            console.log('first_name ' + first_name);
+
+            // Modifier le texte de la balise h1
+            var myTitle = document.getElementById('myTitle');
+            myTitle.textContent = 'Salut ' + first_name;
+
+        </script>
+    </body>
+</html>
