@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=`, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Téléchargement</title>
+        <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    </head>
+    <body>
+        <h1>Télécharger le livre blanc</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sapiente suscipit hic, dolor, eaque beatae harum pariatur reprehenderit quidem enim ut libero odit porro laudantium exercitationem! Nam aspernatur ipsum consequuntur?</p>
+        <button>Télécharger</button>
+
+        <script>
+            // Créer une base de donnée "in memory"
+            var avaibleUsers = [
+                'j.noyer@digitalwokshop.fr',
+                'julwebdesign@gmail.fr',
+                'pierre@florindo.com'
+            ];
+
+            // Définir une variable pour vérifier la présence du cookie
+            var userCookie = localStorage.getItem('whitPaperUser');
+
+            // Vérifier la présence du cookie
+            if( userCookie === null ){
+                // RTediriger l'utilisateur vers la page index.html
+                window.location.assign('index.html');
+
+            } else{
+                // Vérifier la présence de l'email dans la BDD
+                for( var email of avaibleUsers ){
+                    if( email ===  userCookie){
+                        console.log('User is logged')
+                    }
+                }
+
+                localStorage.removeItem('whitPaperUser');
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>EXO1 : révision Javascript</title>
+    </head>
+    <body>
+        
+        <h1 id="myTitle">Try to see me</h1>
+        <p id="objectResponse"></p>
+
+        <!-- 
+            Appeler une fonction JS depuis une balise du DOM
+         -->
+        <button onclick="user.userIsMajor()">Suis-je majeur ?</button>
+
+        <script>
+        
+            // Les variables
+            var userName = 'Julien Noyer'; //=> type String
+            var userAge = 38; //=> type Number
+            var isMajor = true; //=> type Boolean
+
+            // Créer une variable pour sélectionner une balise de DOM
+            var myTitle = document.getElementById('myTitle');
+            var objectResponse = document.getElementById('objectResponse');
+
+            // Modifier le contenu de la balise myTitle
+            myTitle.textContent = 'Hello ' + userName;
+
+            // Créer un objet Javascript
+            var user = {
+                // Propriétés
+                first_name: 'Julien',
+                last_name: 'Noyer',
+                age: 38,
+
+                // Méthodes
+                sayHello: function(){
+                    // Modifier le contenu de la balise myTitle
+                    myTitle.textContent = 'Ciao ' + user.first_name + ' ' + user.last_name;
+                },
+ 
+                userIsMajor: function(){
+                    // Vérifier l'age de l'utilisateur
+                    if( this.age >= 18 ){
+                        objectResponse.textContent = 'Vous êtes majeur(e)';
+                    }
+                    else{
+                        objectResponse.textContent = 'Vous n\'êtes pas majeur(e)';
+                    };
+                }
+            };
+
+            // Appeler la méthode pour dire bonjour
+            user.sayHello();
+
+        </script>
+    </body>
+</html>

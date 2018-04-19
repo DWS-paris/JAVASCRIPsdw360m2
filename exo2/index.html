@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Inscription</title>
+        <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    </head>
+    <body>
+        <h1>Téléchargez notre livre blanc</h1>
+        <form action="#">    
+            <input type="text" name="first_name" placeholder="Prénom">
+            <input type="text" name="last_name" placeholder="Nom">
+            <input type="email" name="email" placeholder="Email">
+            <button type="submit">Télécharger</button>
+        </form>
+
+        <!-- Intégration de jQuery -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <!-- Ajouter le script de la page après jQuery -->
+        <script>
+        
+            // Définition des variables
+            var myForm = $('form');
+            var firstName = $('[name="first_name"]');
+            var lastName = $('[name="last_name"]');
+            var email = $('[name="email"]');
+
+            // Capter la soumission du formulaire
+            myForm.submit( function(event){
+                // Bloquer le comportement par defaut du formulaire
+                event.preventDefault();
+
+                // Définir une variable pour les erreurs
+                var errorFrom = 3;
+
+                // Vérifier la présence de données dans les inputs
+                if( firstName.val().length >= 2 ){
+                    // Success
+                    errorFrom = errorFrom - 1;
+
+                } else { alert('Prénom obligatoire') }
+
+                if( lastName.val().length >= 2 ){
+                    // Success
+                    errorFrom = errorFrom - 1;
+
+                } else { alert('Nom obligatoire') }
+
+                if( email.val().length >= 5 ){
+                    // Success
+                    errorFrom = errorFrom - 1;
+
+                } else { alert('Email obligatoire') }
+
+                
+                // Validation finale du formulaire
+                if( errorFrom === 0 ){
+                    // Stocker un cookie
+                    localStorage.setItem('whitPaperUser', email.val());
+
+                    // Afficher la page protected.html
+                    window.location.assign('protected.html');
+                };
+                
+            }); 
+
+        </script>
+    </body>
+</html>
